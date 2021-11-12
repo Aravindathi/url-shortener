@@ -11,10 +11,10 @@ function App() {
       body: JSON.stringify({
         url: e.target[0].value
       }),
-    };
+    }
     fetch("https://master.dd9k055ybpjmv.amplifyapp.com/", requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data["short_id"])
+      .then((data) => console.log(data["short_id"]))
   }
   return (
     <form className = "App" onSubmit={submitHandler}>
