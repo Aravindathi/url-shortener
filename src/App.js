@@ -5,8 +5,6 @@ function App() {
 
   const submitHandler =(e) => {
     e.preventDefault()
-    console.log(e.target[0].value)
-
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -16,7 +14,7 @@ function App() {
     };
     fetch("https://master.dd9k055ybpjmv.amplifyapp.com/", requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data["value"]["short_id"],data["value"]["_id"]))
+      .then((data) => console.log(data.short_id)
   }
   return (
     <form className = "App" onSubmit={submitHandler}>
