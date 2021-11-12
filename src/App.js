@@ -16,7 +16,7 @@ function App() {
     };
     fetch("https://master.dd9k055ybpjmv.amplifyapp.com/", requestOptions)
       .then((response) => response.json())
-      .then((dataa) => console.log(dataa))
+      .then((data) => console.log(data["short_id"],data))
   }
   return (
     <form className = "App" onSubmit={submitHandler}>
