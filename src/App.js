@@ -16,7 +16,7 @@ function App() {
     };
     fetch("http://localhost:3001/", requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((datas) => console.log(datas))
   }
   return (
     <form className = "App" onSubmit={submitHandler}>
