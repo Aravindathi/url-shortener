@@ -14,7 +14,7 @@ function App() {
         url: e.target[0].value
       }),
     };
-    fetch("http://localhost:3001/", requestOptions)
+    fetch("https://master.dd9k055ybpjmv.amplifyapp.com/", requestOptions)
       .then((response) => response.json())
       .then((dataa) => console.log(dataa))
   }
