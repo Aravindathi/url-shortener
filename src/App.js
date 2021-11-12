@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
 
 function App() {
+
+  const submitHandler =(e) => {
+    e.preventDefault()
+    console.log(e.target[0].value)
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        url: e.target[0].value
+      }),
+    };
+    fetch("http://localhost:3001/", requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form className = "App" onSubmit={submitHandler}>
+      <h1 className="title">URL SHORTENER</h1>
+      <label htmlFor="url">Your url</label>
+      <br/>
+      <input type="text" name="url" id="url"></input>
+      <br/>
+      <br/>
+      <button type="submit">Shorten</button>
+    </form>
   );
 }
 
