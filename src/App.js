@@ -20,7 +20,7 @@ function App() {
   }
   return (
     <form className = "App" onSubmit={submitHandler}>
-      <h1 className="title">URL SHORTENER</h1>
+      <h1 className="title">URL SHORTENER APP</h1>
       <label htmlFor="url">Your url</label>
       <br/>
       <input type="text" name="url" id="url"></input>
